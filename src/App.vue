@@ -23,10 +23,11 @@ export default {
 
     <router-view></router-view>
 
-    <AppFooter />
+    <footer class="bg-slate-400">
+      <AppFooter />
+    </footer>
+
   </div>
 </template>
 
-<style lang="scss">
-.tamplate {}
-</style>
+<style lang="scss"></style>

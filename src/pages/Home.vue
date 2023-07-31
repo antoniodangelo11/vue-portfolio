@@ -3,9 +3,40 @@
 </script>
 
 <template>
-    <div>
-        <h1>Sono la home</h1>
+    <div class="">
+        <div class="line flex">
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+        </div>
+        <div class="line flex">
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+        </div>
+
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+    width: 300px;
+    height: 500px;
+    border: 2px solid black;
+    margin: 2rem;
+}
+</style>
