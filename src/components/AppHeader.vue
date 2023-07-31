@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <header class="p-1 dark:text-white">
+    <header class="header dark:text-white">
         <div class="container flex justify-between h-16 mx-auto">
             <ul class="items-stretch hidden space-x-3 lg:flex">
                 <li class="flex decoration-white">
@@ -59,4 +59,8 @@
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header {
+    padding: 0.15rem;
+}
+</style>
