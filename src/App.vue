@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div class="template bg-slate-500">
-    <header class="bg-slate-400">
+    <header class="header bg-slate-400">
       <AppHeader />
     </header>
 
@@ -30,4 +30,8 @@ export default {
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.header {
+  padding: 0.15rem;
+}
+</style>
