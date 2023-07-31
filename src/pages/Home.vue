@@ -3,8 +3,14 @@
 </script>
 
 <template>
-    <div class="">
-        <div class="line flex">
+    <div class="container m-auto flex justify-center">
+        <div class="grid grid-cols-4 gap-4">
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
             <div class="card">
             </div>
             <div class="card">
@@ -16,19 +22,6 @@
             <div class="card">
             </div>
         </div>
-        <div class="line flex">
-            <div class="card">
-            </div>
-            <div class="card">
-            </div>
-            <div class="card">
-            </div>
-            <div class="card">
-            </div>
-            <div class="card">
-            </div>
-        </div>
-
     </div>
 </template>
 
