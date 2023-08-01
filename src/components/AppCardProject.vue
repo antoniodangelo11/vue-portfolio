@@ -21,22 +21,21 @@ export default {
 };
 </script>
 <template>
-  <div class="card-project rounded-lg">
+  <div class="card-project drop-shadow-lg rounded-md overflow-hidden">
     <div @mouseenter="playVideo" @mouseleave="pauseVideo" class="relative">
       <video ref="videoRef" class="w-full h-full object-cover" loop muted>
         <source
           src="../../public/img/spotify-responsive.mp4"
           type="video/mp4"
         />
-        <!-- Aggiungi altri formati video qui per una migliore compatibilità con i browser -->
       </video>
       <div
         v-if="!isPlaying"
         class="absolute inset-0 flex items-center justify-center"
       ></div>
     </div>
-    <div class="text bg-slate-400 py-2 px-4">
-      <div class="title text-3xl font-bold mb-4">Progetto {{ dataCard }}</div>
+    <div class="text bg-slate-400 py-3 px-4">
+      <div class="title text-3xl font-bold mb-6">Progetto {{ dataCard }}</div>
       <div class="author mb-4">
         <span class="detail bg-slate-500">Autore</span>
       </div>
@@ -51,7 +50,7 @@ export default {
           >TECHNOLOGY</span
         >
       </div>
-      <div class="types py-2">
+      <div class="types">
         <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
           >TYPE</span
         >
@@ -62,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 .detail {
   font-size: 1rem;
-  padding: 0.4em 1.7em;
+  padding: 0.3em 1.7em;
   background-color: #000;
   border: 3px solid slategrey;
   border-radius: 1em;
