@@ -40,14 +40,10 @@ export default {
         <span class="detail bg-slate-500">{{ dataCard.user.name }}</span>
       </div>
       <div class="technologies py-2">
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TECHNOLOGY</span
-        >
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TECHNOLOGY</span
-        >
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TECHNOLOGY</span
+        <span
+          v-for="technology in dataCard.technologies"
+          class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
+          >{{ technology.name }}</span
         >
       </div>
       <div class="types">
