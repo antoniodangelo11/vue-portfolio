@@ -1,10 +1,12 @@
 <script>
 import axios from "axios";
 import AppCardProject from "../components/AppCardProject.vue";
+import { store } from "../store";
 
 export default {
   data() {
     return {
+      store,
       arrProjects: [],
       // arrTypes: [],
       currentPage: 1,
@@ -39,7 +41,7 @@ export default {
           },
         })
         .then((response) => {
-          this.arrProjects = response.data.results.data;
+          store.userProjects = response.data.results.data;
           this.nPages = response.data.results.last_page;
           this.loader = false;
         });
@@ -65,7 +67,7 @@ export default {
       class="grid grid-cols-1 lg:grid-cols-2 px-4 md:px-6 lg:px-4 gap-10 py-4"
     >
       <AppCardProject
-        v-for="project in arrProjects"
+        v-for="project in store.userProjects"
         :key="project.id"
         :dataCard="project"
       />
