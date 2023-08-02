@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    dataCard: Number,
+    dataCard: Object,
   },
   data() {
     return {
@@ -35,9 +35,9 @@ export default {
       ></div>
     </div>
     <div class="text bg-slate-400 py-3 px-4">
-      <div class="title text-3xl font-bold mb-6">Progetto {{ dataCard }}</div>
+      <div class="title text-3xl font-bold mb-6">{{ dataCard.title }}</div>
       <div class="author mb-4">
-        <span class="detail bg-slate-500">Autore</span>
+        <span class="detail bg-slate-500">{{ dataCard.user.name }}</span>
       </div>
       <div class="technologies py-2">
         <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
@@ -51,8 +51,9 @@ export default {
         >
       </div>
       <div class="types">
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TYPE</span
+        <span
+          class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
+          >{{ dataCard.type.name }}</span
         >
       </div>
     </div>
