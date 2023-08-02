@@ -9,36 +9,27 @@ export default {
       arrTypes: [],
       currentPage: 1,
       nPages: 0,
-      firstPage: false,
-      lastPage: false,
-      // loader: true,
+      loader: true,
     };
   },
   methods: {
     changePage(page) {
       this.currentPage = page;
-      // this.getProjects();
-      this.firstPage = !this.firstPage;
-      this.lastPage = !this.lastPage;
     },
     nextPage() {
-      this.currentPage++;
-      // this.getProjects();
       if (this.currentPage >= this.nPages) {
-        this.lastPage = true;
+        this.currentPage = page;
       }
-      this.firstPage = false;
+      this.currentPage++;
     },
     previousPage() {
-      this.currentPage--;
-      // this.getProjects();
       if (this.currentPage <= 1) {
-        this.firstPage = true;
+        this.currentPage = page;
       }
-      this.lastPage = false;
+      this.currentPage--;
     },
     getProjects() {
-      // this.loader = true;
+      this.loader = true;
       axios
         .get("http://localhost:8000/api/projects", {
           params: {
@@ -50,7 +41,7 @@ export default {
         .then((response) => {
           this.arrProjects = response.data.results.data;
           this.nPages = response.data.results.last_page;
-          // this.loader = false;
+          this.loader = false;
         });
     },
   },
@@ -66,16 +57,21 @@ export default {
 };
 </script>
 <template>
-  <div
-    class="lg:container lg:mx-auto grid grid-cols-1 lg:grid-cols-2 px-4 md:px-6 lg:px-4 gap-10 py-4"
-  >
-    <AppCardProject
-      v-for="project in arrProjects"
-      :key="project.id"
-      :dataCard="project"
-    />
+  <div class="lg:container lg:mx-auto" v-if="loader">
+    <h1 class="text-center text-3xl font-bold text-red-600">CARICAMENTO</h1>
+  </div>
+  <div class="lg:container lg:mx-auto" v-else>
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 px-4 md:px-6 lg:px-4 gap-10 py-4"
+    >
+      <AppCardProject
+        v-for="project in arrProjects"
+        :key="project.id"
+        :dataCard="project"
+      />
+    </div>
 
-    <nav aria-label="Page navigation example">
+    <nav class="pl-4 md:pl-6 lg:pl-4 mb-3" aria-label="Page navigation example">
       <ul class="flex items-center -space-x-px h-10 text-base">
         <li>
           <button
