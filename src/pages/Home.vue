@@ -1,4 +1,18 @@
-<script></script>
+<script>
+import { store } from "../store";
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    setUserId(index) {
+      store.setUserId(index);
+    },
+  },
+};
+</script>
 
 <template>
   <div class="container mx-auto py-12">
@@ -8,7 +22,7 @@
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3 md:p-0 lg:p-0"
     >
-      <a v-for="index in 6" href="#">
+      <a v-for="index in 6" href="#" @click.prevent="setUserId(index)">
         <div class="card group">
           <img
             class="group-hover:object-none"
