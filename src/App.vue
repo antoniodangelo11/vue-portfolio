@@ -21,7 +21,9 @@ export default {
       <AppHeader />
     </header>
 
-    <router-view></router-view>
+    <main>
+      <router-view></router-view>
+    </main>
 
     <footer class="bg-slate-400 fixed bottom-0 left-0 right-0">
       <AppFooter />
@@ -31,6 +33,15 @@ export default {
 
 <style lang="scss">
 .header {
+  height: 4.3rem;
   padding: 0.15rem;
+}
+
+main {
+  height: calc(100% - 10.3rem);
+}
+
+footer {
+  height: 6rem;
 }
 </style>
