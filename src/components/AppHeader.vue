@@ -28,7 +28,7 @@
             class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
             aria-current="page"
           >
-            Contacs
+            Contacts
           </router-link>
         </li>
       </ul>
