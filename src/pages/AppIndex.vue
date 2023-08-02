@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       arrProjects: [],
-      arrTypes: [],
+      // arrTypes: [],
       currentPage: 1,
       nPages: 0,
       loader: true,
@@ -99,6 +99,7 @@ export default {
         <li v-for="page in nPages" :key="page">
           <button
             class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            :class="{ 'bg-red-600': page == currentPage }"
             @click="changePage(page)"
           >
             {{ page }}
