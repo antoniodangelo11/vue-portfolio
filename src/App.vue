@@ -39,6 +39,7 @@ export default {
 
 main {
   height: calc(100% - 10.3rem);
+  overflow-y: scroll;
 }
 
 footer {
