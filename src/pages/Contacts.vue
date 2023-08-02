@@ -1,142 +1,101 @@
-<script></script>
+<script>
+import axios from 'axios';
+import { store } from '../store';
+
+export default {
+  data() {
+    return {
+      store,
+      name: '',
+      email: '',
+      message: '',
+      newsletter: true,
+      showSuccess: false,
+      isSending: false,
+      hasError: false,
+    }
+  },
+  methods: {
+    sendLead() {
+      this.isSending = true;
+      axios.post(this.store.baseUrl + 'api/leads', {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+        newsletter: this.newsletter,
+
+      })
+        .then(response => {
+          this.isSending = false;
+
+          if (response.data.success) {
+            this.showSuccess = true;
+            this.resetForm();
+          } else {
+            this.hasError = true;
+
+          }
+        });
+    },
+    resetForm() {
+      this.name = '';
+      this.email = '';
+      this.message = '';
+      this.newsletter = true;
+    },
+
+  },
+
+};
+</script>
 
 <template>
-  <section class="py-14">
-    <form
-      novalidate=""
-      action=""
-      class="container flex flex-col mx-auto space-y-12"
-    >
-      <fieldset
-        class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-slate-400"
-      >
-        <div class="space-y-2 col-span-full lg:col-span-1">
-          <p class="font-medium">Personal Inormation</p>
-          <p class="text-xs">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
-            fuga autem eum!
-          </p>
-        </div>
-        <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-          <div class="col-span-full sm:col-span-3">
-            <label for="firstname" class="text-sm">First name</label>
-            <input
-              id="firstname"
-              type="text"
-              placeholder="First name"
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full sm:col-span-3">
-            <label for="lastname" class="text-sm">Last name</label>
-            <input
-              id="lastname"
-              type="text"
-              placeholder="Last name"
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full sm:col-span-3">
-            <label for="email" class="text-sm">Email</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Email"
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full">
-            <label for="address" class="text-sm">Address</label>
-            <input
-              id="address"
-              type="text"
-              placeholder=""
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full sm:col-span-2">
-            <label for="city" class="text-sm">City</label>
-            <input
-              id="city"
-              type="text"
-              placeholder=""
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full sm:col-span-2">
-            <label for="state" class="text-sm">State / Province</label>
-            <input
-              id="state"
-              type="text"
-              placeholder=""
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full sm:col-span-2">
-            <label for="zip" class="text-sm">ZIP / Postal</label>
-            <input
-              id="zip"
-              type="text"
-              placeholder=""
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-        </div>
-      </fieldset>
-      <fieldset
-        class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-slate-400"
-      >
-        <div class="space-y-2 col-span-full lg:col-span-1">
-          <p class="font-medium">Profile</p>
-          <p class="text-xs">Adipisci fuga autem eum!</p>
-        </div>
-        <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-          <div class="col-span-full sm:col-span-3">
-            <label for="username" class="text-sm">Username</label>
-            <input
-              id="username"
-              type="text"
-              placeholder="Username"
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full sm:col-span-3">
-            <label for="website" class="text-sm">Website</label>
-            <input
-              id="website"
-              type="text"
-              placeholder="https://"
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            />
-          </div>
-          <div class="col-span-full">
-            <label for="bio" class="text-sm">Bio</label>
-            <textarea
-              id="bio"
-              placeholder=""
-              class="w-full rounded-md focus:ring focus:ri focus:ri dark:border-gray-700 dark:text-gray-900"
-            ></textarea>
-          </div>
-          <div class="col-span-full">
-            <label for="bio" class="text-sm">Photo</label>
-            <div class="flex items-center space-x-2">
-              <img
-                src="https://source.unsplash.com/30x30/?random"
-                alt=""
-                class="w-10 h-10 rounded-full dark:bg-gray-500 dark:bg-gray-700"
-              />
-              <button
-                type="button"
-                class="px-4 py-2 border rounded-md dark:border-gray-100"
-              >
-                Change
-              </button>
-            </div>
-          </div>
-        </div>
-      </fieldset>
+  
+  <div class="container">
+    <h1 class="text-3xl font-bold mb-6">Contact Us</h1>
+
+    <div v-if="hasError" class="bg-red-100 text-red-600 border border-red-600 py-2 px-4 rounded mb-4">
+      Error in form submission!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="hasError = false">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div v-if="showSuccess" class="bg-green-100 text-green-600 border border-green-600 py-2 px-4 rounded mb-4">
+      Message sent successfully!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="showSuccess = false">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <form @submit.prevent="sendLead" novalidate>
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="name" class="form-input mt-1 block w-full rounded-md border-gray-300" id="name" v-model="name">
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+        <input type="email" class="form-input mt-1 block w-full rounded-md border-gray-300" id="email" v-model="email">
+      </div>
+
+      <div class="mb-4">
+        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+        <textarea id="message" class="form-textarea mt-1 block w-full rounded-md border-gray-300" rows="5" v-model="message"></textarea>
+      </div>
+
+      <div class="mb-4">
+        <input type="checkbox" class="form-checkbox" id="newsletter" v-model="newsletter">
+        <label class="ml-2 text-sm text-gray-700" for="newsletter">Subscribe to newsletter</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" :class="{'opacity-50 pointer-events-none': isSending}">
+        Submit
+      </button>
     </form>
-  </section>
+  </div>
+
+
 </template>
 
 <style lang="scss" scoped></style>
