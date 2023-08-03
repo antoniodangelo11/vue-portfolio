@@ -6,7 +6,7 @@ export default {
     return {
       store,
       arrUsers: [],
-      // loader: true,
+      loader: true,
     };
   },
   methods: {
@@ -14,10 +14,10 @@ export default {
       store.setUserId(index);
     },
     getUsers() {
-      // this.loader = true;
+      this.loader = true;
       axios.get("http://localhost:8000/api/users").then((response) => {
         this.arrUsers = response.data.results;
-        // this.loader = false;
+        this.loader = false;
       });
     },
   },
@@ -28,10 +28,13 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="lg:container lg:mx-auto" v-if="loader">
+  <div
+    class="lg:container lg:mx-auto flex justify-center items-center h-full"
+    v-if="loader"
+  >
     <h1 class="text-center text-3xl font-bold text-red-600">CARICAMENTO</h1>
-  </div> -->
-  <div class="container mx-auto py-12">
+  </div>
+  <div class="container mx-auto py-12" v-else>
     <h1 class="text-center text-3xl font-extrabold mb-7">
       Welcome in our Portfolios
     </h1>
@@ -46,7 +49,7 @@ export default {
           <div class="card group relative rounded-3xl overflow-hidden">
             <img
               class="group-hover:object-none w-2/5 absolute left-1/4"
-              :src="store.baseUrl + `storage/` + user.image"
+              :src="store.baseUrl + `storage/uploads/` + user.image"
               :alt="user.name"
             />
             <div class="title text-lg font-bold text-center">
