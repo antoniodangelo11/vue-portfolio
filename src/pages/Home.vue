@@ -43,9 +43,9 @@ export default {
           :to="{ name: 'index' }"
           @click.prevent="setUserId(user.id)"
         >
-          <div class="card group">
+          <div class="card group relative rounded-3xl overflow-hidden">
             <img
-              class="group-hover:object-none"
+              class="group-hover:object-none w-2/5 absolute left-1/4"
               :src="store.baseUrl + `storage/` + user.image"
               :alt="user.name"
             />
@@ -59,4 +59,32 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  aspect-ratio: 8 / 5;
+  --bg: hsl(330 10% calc(95% - (var(--hover) * 10%)));
+  --accent: #94a3b8;
+  transition: background 0.2s;
+  background: radial-gradient(
+      circle at top left,
+      var(--accent),
+      transparent 100%
+    ),
+    var(--bg);
+}
+
+img {
+  top: 20%;
+  transform: translateX(calc(var(--hover) * -15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
+}
+
+.card {
+  --hover: 0;
+}
+
+.card:hover {
+  --hover: 1;
+}
+</style>
