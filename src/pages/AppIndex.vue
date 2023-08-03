@@ -7,7 +7,6 @@ export default {
   data() {
     return {
       store,
-      arrProjects: [],
       // arrTypes: [],
       currentPage: 1,
       nPages: 0,
@@ -64,6 +63,9 @@ export default {
     <h1 class="text-center text-3xl font-bold text-red-600">CARICAMENTO</h1>
   </div>
   <div class="lg:container lg:mx-auto" v-else>
+    <h1 class="text-3xl font-extrabold text-blue-700 text-center py-3">
+      {{ store.userProjects[0].user.name }}'s Projects
+    </h1>
     <div
       class="grid grid-cols-1 lg:grid-cols-2 px-4 md:px-6 lg:px-4 gap-10 py-4"
     >
