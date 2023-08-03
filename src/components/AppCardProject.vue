@@ -36,18 +36,30 @@ export default {
     </div>
     <div class="text bg-slate-400 py-3 px-4">
       <div class="title text-3xl font-bold mb-6">{{ dataCard.title }}</div>
-      <div class="author mb-4">
-        <span class="detail bg-slate-500">{{ dataCard.user.name }}</span>
+      <div class="author mb-2">
+        <!-- <span class="detail bg-slate-500">{{ dataCard.user.name }}</span> -->
+        <!-- <div
+          class="bg-red-950 text-red-400 border border-red-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group inline-block"
+        >
+          <span
+            class="bg-red-400 shadow-red-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"
+          ></span>
+          {{ dataCard.user.name }}
+        </div> -->
+        <div
+          class="bg-blue-500 text-white border border-blue-300 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group inline-block"
+        >
+          <span
+            class="bg-blue-300 shadow-blue-300 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"
+          ></span>
+          {{ dataCard.user.name }}
+        </div>
       </div>
       <div class="technologies py-2">
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TECHNOLOGY</span
-        >
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TECHNOLOGY</span
-        >
-        <span class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
-          >TECHNOLOGY</span
+        <span
+          v-for="technology in dataCard.technologies"
+          class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
+          >{{ technology.name }}</span
         >
       </div>
       <div class="types">
