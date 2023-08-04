@@ -34,7 +34,7 @@ export default {
         class="absolute inset-0 flex items-center justify-center"
       ></div>
     </div>
-    <div class="text bg-slate-400 py-3 px-4">
+    <div class="text bg-indigo-600 py-3 px-4">
       <div class="title text-3xl font-bold mb-6">{{ dataCard.title }}</div>
       <div class="author mb-2">
         <!-- <span class="detail bg-slate-500">{{ dataCard.user.name }}</span> -->
