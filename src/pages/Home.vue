@@ -46,7 +46,7 @@ export default {
           :to="{ name: 'index' }"
           @click.prevent="setUserId(user.id)"
         >
-          <div class="card group relative rounded-3xl overflow-hidden">
+          <div class="card relative rounded-3xl overflow-hidden">
             <img
               class="group-hover:object-none w-2/5 absolute left-1/4"
               :src="store.baseUrl + `storage/uploads/` + user.image"
