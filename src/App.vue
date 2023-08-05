@@ -21,7 +21,7 @@ export default {
       <AppHeader />
     </header>
 
-    <main class="mb-40">
+    <main class="mb-20">
       <router-view></router-view>
     </main>
 
