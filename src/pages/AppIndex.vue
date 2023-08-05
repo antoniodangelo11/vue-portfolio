@@ -84,7 +84,7 @@ export default {
       <ul class="flex items-center -space-x-px h-10 text-base">
         <li>
           <button
-            class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-white bg-blue-600 border border-blue-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             @click="previousPage()"
           >
             <span class="sr-only">Previous</span>
@@ -107,8 +107,8 @@ export default {
         </li>
         <li v-for="page in nPages" :key="page">
           <button
-            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            :class="{ 'bg-red-600': page == currentPage }"
+            class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-blue-700 border border-blue-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            :class="{ 'bg-blue-300': page == currentPage }"
             @click="changePage(page)"
           >
             {{ page }}
@@ -116,7 +116,7 @@ export default {
         </li>
         <li @click="nextPage()">
           <button
-            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-blue-600 border border-blue-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <span class="sr-only">Next</span>
             <svg
