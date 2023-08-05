@@ -76,7 +76,11 @@ export default {
       />
     </div>
 
-    <nav class="pl-4 md:pl-6 lg:pl-4 mb-3" aria-label="Page navigation example">
+    <!-- paginator  -->
+    <nav
+      class="pl-4 md:pl-6 lg:pl-4 mb-3 py-3"
+      aria-label="Page navigation example"
+    >
       <ul class="flex items-center -space-x-px h-10 text-base">
         <li>
           <button
