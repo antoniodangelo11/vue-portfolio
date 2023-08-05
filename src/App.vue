@@ -16,8 +16,8 @@ export default {
 </script>
 
 <template>
-  <div class="template bg-indigo-300 dark:bg-stone-600 h-screen">
-    <header class="header bg-indigo-800">
+  <div class="template bg-blue-300 h-screen">
+    <header class="header text-white bg-blue-900">
       <AppHeader />
     </header>
 
@@ -25,7 +25,7 @@ export default {
       <router-view></router-view>
     </main>
 
-    <footer class="bg-indigo-700 fixed bottom-0 left-0 right-0">
+    <footer class="text-white bg-blue-800 fixed bottom-0 left-0 right-0">
       <AppFooter />
     </footer>
   </div>
