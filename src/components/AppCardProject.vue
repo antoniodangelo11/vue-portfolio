@@ -41,7 +41,7 @@ export default {
       <!-- testo della card -->
       <div class="flex justify-between">
         <div
-          class="title text-3xl font-bold mb-4 hover:cursor-pointer hover:underline inline-block"
+          class="title text-3xl font-bold mb-3 hover:cursor-pointer hover:underline inline-block"
         >
           {{ dataCard.title }}
         </div>
