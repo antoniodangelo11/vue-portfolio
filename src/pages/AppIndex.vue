@@ -59,7 +59,10 @@ export default {
 };
 </script>
 <template>
-  <div class="lg:container lg:mx-auto" v-if="loader">
+  <div
+    class="lg:container lg:mx-auto flex justify-center items-center h-full"
+    v-if="loader"
+  >
     <h1 class="text-center text-3xl font-bold text-red-600">CARICAMENTO</h1>
   </div>
   <div class="lg:container lg:mx-auto" v-else>
