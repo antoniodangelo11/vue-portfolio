@@ -15,7 +15,7 @@ export default {
     },
     getUsers() {
       this.loader = true;
-      axios.get("http://localhost:8000/api/users").then((response) => {
+      axios.get(store.baseUrl + "api/users").then((response) => {
         this.arrUsers = response.data.results;
         this.loader = false;
       });

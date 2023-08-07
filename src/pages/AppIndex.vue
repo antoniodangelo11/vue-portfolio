@@ -32,7 +32,7 @@ export default {
     getProjects() {
       this.loader = true;
       axios
-        .get("http://localhost:8000/api/projects", {
+        .get(store.baseUrl + "api/projects", {
           params: {
             page: this.currentPage,
             // se sto già in prjects.index non esegue il craeated e non aggiorna la pagina
