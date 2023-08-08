@@ -30,13 +30,4 @@ export default {
 .header {
   padding: 0.15rem;
 }
-
-main {
-  height: calc(100% - 10.3rem);
-  overflow-y: scroll;
-}
-
-footer {
-  height: 6rem;
-}
 </style>
