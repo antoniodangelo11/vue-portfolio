@@ -42,6 +42,10 @@ export default {
           :src="store.baseUrl + `storage/uploads` + dataCard.video"
           type="video/webm"
         />
+        <source
+          :src="store.baseUrl + `storage/uploads` + dataCard.video"
+          type="video/mkv"
+        />
       </video>
       <div
         v-if="!isPlaying"
