@@ -30,14 +30,10 @@ export default {
       <video
         v-if="dataCard.video"
         ref="videoRef"
-        class="w-full h-full object-cover"
+        class="w-full max-h-[223.86px] object-cover"
         loop
         muted
       >
-        <source
-          :src="store.baseUrl + `storage/uploads` + dataCard.video"
-          type="video/wmv"
-        />
         <source
           :src="store.baseUrl + `storage/uploads` + dataCard.video"
           type="video/mp4"
@@ -52,7 +48,12 @@ export default {
         class="absolute inset-0 flex items-center justify-center"
       ></div>
     </div>
-    <img v-if="!dataCard.video" :src="dataCard.image1" :alt="dataCard.image1" />
+    <img
+      v-if="!dataCard.video"
+      :src="store.baseUrl + `storage/uploads` + dataCard.image1"
+      :alt="dataCard.image1"
+      class="max-h-[223.86px] w-full"
+    />
     <div
       class="text bg-blue-500 border-b-2 border-l-2 border-r-2 border-blue-500 p-4"
     >
