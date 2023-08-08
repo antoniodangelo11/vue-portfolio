@@ -34,16 +34,12 @@ export default {};
       </li>
     </ul>
   </div> -->
-  <nav class="bg-blue-900 border-gray-200 dark:bg-gray-900">
+  <nav class="bg-blue-900 dark:bg-gray-900">
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 z-50"
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
       <div class="flex items-center">
-        <img
-          src="../../public/favicon.ico"
-          class="h-8 mr-3"
-          alt="Flowbite Logo"
-        />
+        <img src="../../public/favicon.ico" class="h-8 mr-3" alt="Logo" />
         <span
           class="self-center text-2xl font-semibold whitespace-nowrap text-white"
           >Portfolios</span
@@ -73,9 +69,9 @@ export default {};
           />
         </svg>
       </button>
-      <div class="hidden w-full md:block md:w-auto z-50" id="navbar-default">
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border lg:text-white border-gray-100 rounded-lg bg-blue-300 lg:bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border md:text-white border-gray-100 rounded-lg bg-blue-300 md:bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
             <router-link
