@@ -1,10 +1,13 @@
 <script>
+import { store } from "../store";
+
 export default {
   props: {
     dataCard: Object,
   },
   data() {
     return {
+      store,
       isPlaying: false,
     };
   },
@@ -26,8 +29,8 @@ export default {
     <div @mouseenter="playVideo" @mouseleave="pauseVideo" class="relative">
       <video ref="videoRef" class="w-full h-full object-cover" loop muted>
         <source
-          src="../../public/img/spotify-responsive.mp4"
-          type="video/mp4"
+          :src="store.baseUrl + `storage/uploads` + dataCard.video"
+          type="video/webm"
         />
       </video>
       <div
