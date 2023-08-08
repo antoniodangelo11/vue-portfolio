@@ -16,16 +16,16 @@ export default {
 </script>
 
 <template>
-  <div class="template bg-slate-500 h-screen">
-    <header class="header bg-slate-400">
+  <div class="template">
+    <header class="header text-white bg-blue-900">
       <AppHeader />
     </header>
 
-    <main>
+    <main class="mb-20">
       <router-view></router-view>
     </main>
 
-    <footer class="bg-slate-400 fixed bottom-0 left-0 right-0">
+    <footer class="text-white bg-blue-800">
       <AppFooter />
     </footer>
   </div>
@@ -33,16 +33,16 @@ export default {
 
 <style lang="scss">
 .header {
-  height: 4.3rem;
+  // height: 4.3rem;
   padding: 0.15rem;
 }
 
-main {
-  height: calc(100% - 10.3rem);
-  overflow-y: scroll;
-}
+// main {
+//   height: calc(100% - 10.3rem);
+//   overflow-y: scroll;
+// }
 
-footer {
-  height: 6rem;
-}
+// footer {
+//   height: 6rem;
+// }
 </style>
