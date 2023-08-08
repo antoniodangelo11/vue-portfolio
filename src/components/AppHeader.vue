@@ -48,7 +48,7 @@ export default {};
       <button
         data-collapse-toggle="navbar-default"
         type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded="false"
       >
@@ -69,9 +69,9 @@ export default {};
           />
         </svg>
       </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border md:text-white border-gray-100 rounded-lg bg-blue-300 md:bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col p-4 lg:p-0 mt-4 border text-black lg:text-white border-gray-100 rounded-lg bg-blue-300 lg:bg-blue-900 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
             <router-link
