@@ -2,11 +2,6 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 
-// initialize components based on data attribute selectors
-// onMounted(() => {
-//   initFlowbite();
-// });
-
 export default {
   components: {
     AppHeader,
@@ -33,16 +28,15 @@ export default {
 
 <style lang="scss">
 .header {
-  // height: 4.3rem;
   padding: 0.15rem;
 }
 
-// main {
-//   height: calc(100% - 10.3rem);
-//   overflow-y: scroll;
-// }
+main {
+  height: calc(100% - 10.3rem);
+  overflow-y: scroll;
+}
 
-// footer {
-//   height: 6rem;
-// }
+footer {
+  height: 6rem;
+}
 </style>

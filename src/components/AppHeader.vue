@@ -1,7 +1,9 @@
-<script></script>
+<script>
+export default {};
+</script>
 
 <template>
-  <div class="container flex justify-between h-16 mx-auto dark:text-white">
+  <!-- <div class="container flex justify-between h-16 mx-auto dark:text-white">
     <ul class="items-stretch hidden space-x-3 lg:flex">
       <li class="flex decoration-white">
         <router-link
@@ -31,57 +33,77 @@
         </router-link>
       </li>
     </ul>
-
-    <div class="flex items-center md:space-x-4">
-      <div class="relative">
-        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-          <button
-            type="submit"
-            title="Search"
-            class="p-1 focus:outline-none focus:ring"
-          >
-            <svg
-              fill="currentColor"
-              viewBox="0 0 512 512"
-              class="w-4 h-4 dark:text-gray-100"
-            >
-              <path
-                d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
-              ></path>
-            </svg>
-          </button>
-        </span>
-        <input
-          type="search"
-          name="Search"
-          placeholder="Search..."
-          class="w-32 py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900"
-        />
+  </div> -->
+  <nav class="bg-blue-900 dark:bg-gray-900">
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    >
+      <div class="flex items-center">
+        <img src="../../public/favicon.ico" class="h-8 mr-3" alt="Logo" />
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+          >Portfolios</span
+        >
       </div>
       <button
+        data-collapse-toggle="navbar-default"
         type="button"
-        class="hidden px-6 py-2 font-semibold rounded lg:block dark:bg-violet-400 dark:text-gray-900"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default"
+        aria-expanded="false"
       >
-        Log in
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5 text-white hover:text-gray-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
       </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border md:text-white border-gray-100 rounded-lg bg-blue-300 md:bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        >
+          <li>
+            <router-link
+              :to="{ name: 'home' }"
+              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent decoration-white"
+              aria-current="page"
+            >
+              <span class="">Home</span>
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'about-us' }"
+              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              aria-current="page"
+            >
+              About Us
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'contacts' }"
+              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              aria-current="page"
+            >
+              Contacts
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </div>
-    <button title="Open menu" type="button" class="p-4 lg:hidden">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        class="w-6 h-6 dark:text-gray-100"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        ></path>
-      </svg>
-    </button>
-  </div>
+  </nav>
 </template>
 
 <style lang="scss"></style>
