@@ -34,31 +34,31 @@ export default {};
       </li>
     </ul>
   </div> -->
-  <nav class="bg-blue-700 border-gray-200 dark:bg-gray-900">
+  <nav class="bg-blue-900 border-gray-200 dark:bg-gray-900">
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 z-50"
     >
-      <a href="https://flowbite.com/" class="flex items-center">
+      <div class="flex items-center">
         <img
-          src="https://flowbite.com/docs/images/logo.svg"
+          src="../../public/favicon.ico"
           class="h-8 mr-3"
           alt="Flowbite Logo"
         />
         <span
-          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >Flowbite</span
+          class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+          >Portfolios</span
         >
-      </a>
+      </div>
       <button
         data-collapse-toggle="navbar-default"
         type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded="false"
       >
         <span class="sr-only">Open main menu</span>
         <svg
-          class="w-5 h-5"
+          class="w-5 h-5 text-white hover:text-gray-600"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -73,26 +73,23 @@ export default {};
           />
         </svg>
       </button>
-      <div
-        class="hidden w-full md:block md:w-auto z-50 bg-blue-700"
-        id="navbar-default"
-      >
+      <div class="hidden w-full md:block md:w-auto z-50" id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-blue-500 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border lg:text-white border-gray-100 rounded-lg bg-blue-300 lg:bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
             <router-link
               :to="{ name: 'home' }"
-              class="nav-link active flex items-center px-4 dark:border-transparent decoration-white"
+              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent decoration-white"
               aria-current="page"
             >
-              <span class="decoration-white">Home</span>
+              <span class="">Home</span>
             </router-link>
           </li>
           <li>
             <router-link
               :to="{ name: 'about-us' }"
-              class="nav-link active flex items-center px-4 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
               aria-current="page"
             >
               About Us
@@ -101,7 +98,7 @@ export default {};
           <li>
             <router-link
               :to="{ name: 'contacts' }"
-              class="nav-link active flex items-center px-4 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
               aria-current="page"
             >
               Contacts
