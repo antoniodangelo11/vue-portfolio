@@ -45,7 +45,7 @@ export default {};
           <li>
             <router-link
               :to="{ name: 'home' }"
-              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-4 dark:border-transparent decoration-white"
+              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-4 lg:mb-0 dark:border-transparent decoration-white"
               aria-current="page"
             >
               Home
@@ -54,7 +54,7 @@ export default {};
           <li>
             <router-link
               :to="{ name: 'about-us' }"
-              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-4 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-4 lg:mb-0 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
               aria-current="page"
             >
               About Us
@@ -63,7 +63,7 @@ export default {};
           <li>
             <router-link
               :to="{ name: 'contacts' }"
-              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-2 lg:mb-0 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
               aria-current="page"
             >
               Contacts
