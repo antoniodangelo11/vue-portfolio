@@ -76,31 +76,26 @@ export default {
     </button>
   </div>
 
-  <div class="grid grid-cols-2 grid-rows-1">
-    <div class="bg-contacts flex items-center justify-center">
-      <i class="fa-solid fa-envelopes-bulk text-[20rem] text-slate-600"></i>
-    </div>
-    <section class="m-5 p-4 dark:text-gray-50">
-      <div class="p-5 text-gray-100">
+  <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1">
+    <section class="m-5 p-4 dark:text-gray-50 row-span-3">
+      <div class="p-5">
         <form
           @submit.prevent="sendLead"
           novalidate
           class="container flex flex-col mx-auto space-y-12"
         >
           <fieldset
-            class="bg-slate-600 grid grid-cols-4 gap-4 p-6 rounded-md shadow-sm dark:bg-gray-900"
+            class="bg-blue-800 grid grid-cols-4 gap-4 p-6 rounded-md shadow-sm dark:bg-gray-900"
           >
-            <h1 class="text-3xl font-bold mx-5">Contact Us</h1>
+            <h1 class="text-3xl font-bold text-white mx-5">Contact Us</h1>
           </fieldset>
 
           <fieldset
-            class="bg-slate-600 py-10 grid grid-cols-4 gap-4 px-6 rounded-md shadow-sm dark:bg-gray-900"
+            class="bg-blue-800 py-10 grid grid-cols-4 gap-4 px-6 rounded-md shadow-sm dark:bg-gray-900"
           >
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
               <div class="col-span-full sm:col-span-6">
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-gray-100"
+                <label for="name" class="block text-sm text-white font-medium"
                   >Name</label
                 >
                 <input
@@ -112,24 +107,9 @@ export default {
               </div>
             </div>
 
-          <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
-            <div class="col-span-full sm:col-span-6">
-              <label for="name" class="block text-sm font-medium text-gray-100"
-                >Name</label
-              >
-              <input
-                type="name"
-                class="form-input mt-1 block w-full rounded-md border-gray-300"
-                id="name"
-                v-model="name"
-              />
-            </div>
-
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
               <div class="col-span-full sm:col-span-6">
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-gray-100"
+                <label for="email" class="block text-sm text-white font-medium"
                   >Email address</label
                 >
                 <input
@@ -145,7 +125,7 @@ export default {
               <div class="col-span-full sm:col-span-6">
                 <label
                   for="message"
-                  class="block text-sm font-medium text-gray-100"
+                  class="block text-sm text-white font-medium"
                   >Message</label
                 >
                 <textarea
@@ -164,18 +144,18 @@ export default {
                 id="newsletter"
                 v-model="newsletter"
               />
-              <label class="ml-2 text-sm text-gray-100" for="newsletter"
+              <label class="ml-2 text-sm text-white" for="newsletter"
                 >Subscribe to newsletter</label
               >
             </div>
           </fieldset>
 
           <div
-            class="bg-slate-600 py-4 flex justify-center rounded-md shadow-sm dark:bg-gray-900"
+            class="bg-blue-800 py-4 flex justify-center rounded-md shadow-sm dark:bg-gray-900"
           >
             <button
               type="submit"
-              class="px-4 py-2 border rounded-md dark:border-gray-100"
+              class="text-white px-4 py-2 border rounded-md dark:border-gray-100"
               :class="{ 'opacity-50 pointer-events-none': isSending }"
             >
               Submit
@@ -184,6 +164,11 @@ export default {
         </form>
       </div>
     </section>
+    <div class="bg-contacts flex items-center justify-center">
+      <i
+        class="fa-solid fa-envelopes-bulk text-7xl md:text-9xl lg:text-[20rem] text-blue-800"
+      ></i>
+    </div>
   </div>
 </template>
 
