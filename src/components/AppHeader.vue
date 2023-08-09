@@ -3,37 +3,6 @@ export default {};
 </script>
 
 <template>
-  <!-- <div class="container flex justify-between h-16 mx-auto dark:text-white">
-    <ul class="items-stretch hidden space-x-3 lg:flex">
-      <li class="flex decoration-white">
-        <router-link
-          :to="{ name: 'home' }"
-          class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent decoration-white"
-          aria-current="page"
-        >
-          <span class="decoration-white">Home</span>
-        </router-link>
-      </li>
-      <li class="flex">
-        <router-link
-          :to="{ name: 'about-us' }"
-          class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
-          aria-current="page"
-        >
-          About Us
-        </router-link>
-      </li>
-      <li class="flex">
-        <router-link
-          :to="{ name: 'contacts' }"
-          class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
-          aria-current="page"
-        >
-          Contacts
-        </router-link>
-      </li>
-    </ul>
-  </div> -->
   <nav class="bg-blue-800 dark:bg-gray-900">
     <div
       class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -104,6 +73,37 @@ export default {};
       </div>
     </div>
   </nav>
+  <!-- <div class="container flex justify-between h-16 mx-auto dark:text-white">
+    <ul class="items-stretch hidden space-x-3 lg:flex">
+      <li class="flex decoration-white">
+        <router-link
+          :to="{ name: 'home' }"
+          class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent decoration-white"
+          aria-current="page"
+        >
+          <span class="decoration-white">Home</span>
+        </router-link>
+      </li>
+      <li class="flex">
+        <router-link
+          :to="{ name: 'about-us' }"
+          class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+          aria-current="page"
+        >
+          About Us
+        </router-link>
+      </li>
+      <li class="flex">
+        <router-link
+          :to="{ name: 'contacts' }"
+          class="nav-link active flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+          aria-current="page"
+        >
+          Contacts
+        </router-link>
+      </li>
+    </ul>
+  </div> -->
 </template>
 
 <style lang="scss"></style>
