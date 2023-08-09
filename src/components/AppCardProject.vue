@@ -30,7 +30,7 @@ export default {
       <video
         v-if="dataCard.video"
         ref="videoRef"
-        class="w-full max-h-[223.86px] object-cover"
+        class="w-full h-[210px] sm:h-[260px] md:h-[300px] lg:h-[280px] object-fill"
         loop
         muted
       >
@@ -56,7 +56,7 @@ export default {
       v-if="!dataCard.video"
       :src="store.baseUrl + `storage/uploads` + dataCard.image1"
       :alt="dataCard.image1"
-      class="max-h-[223.86px] w-full"
+      class="w-full h-[210px] sm:h-[260px] lg:h-[280px] object-fill"
     />
     <div
       class="text bg-blue-500 border-b-2 border-l-2 border-r-2 border-blue-500 p-4"
