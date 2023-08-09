@@ -59,12 +59,12 @@ export default {
       class="w-full h-[210px] sm:h-[260px] lg:h-[280px] object-fill"
     />
     <div
-      class="text bg-blue-500 border-b-2 border-l-2 border-r-2 border-blue-500 p-4"
+      class="text bg-blue-800 border-b-2 border-l-2 border-r-2 border-blue-800 p-4"
     >
       <!-- testo della card -->
       <div class="flex justify-between">
         <div
-          class="title text-3xl font-bold mb-3 hover:cursor-pointer hover:underline inline-block"
+          class="title text-3xl font-bold mb-3 hover:cursor-pointer hover:text-black inline-block text-slate-300"
         >
           {{ dataCard.title }}
         </div>
@@ -73,7 +73,7 @@ export default {
             class="bg-blue-700 text-white border border-blue-300 border-b-4 font-medium overflow-hidden relative px-4 py-1 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group inline-block"
           >
             <span
-              class="bg-blue-300 shadow-blue-300 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"
+              class="bg-blue-600 shadow-blue-300 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"
             ></span>
             {{ dataCard.user.name }}
           </div>
@@ -82,13 +82,13 @@ export default {
       <div class="technologies py-2">
         <span
           v-for="technology in dataCard.technologies"
-          class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
+          class="text-slate-300 hover:cursor-pointer hover:text-black mr-2"
           >{{ technology.name }}</span
         >
       </div>
       <div class="types">
         <span
-          class="text-slate-700 hover:cursor-pointer hover:text-black mr-2"
+          class="text-slate-300 hover:cursor-pointer hover:text-black mr-2"
           >{{ dataCard.type.name }}</span
         >
       </div>

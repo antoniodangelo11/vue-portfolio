@@ -17,7 +17,7 @@ export default {};
       <button
         data-collapse-toggle="navbar-default"
         type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded="false"
       >
@@ -40,21 +40,21 @@ export default {};
       </button>
       <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 lg:p-0 mt-4 border text-black lg:text-white border-gray-100 rounded-lg bg-blue-300 lg:bg-blue-800 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col p-4 lg:p-0 mt-4 text-black lg:text-white rounded-lg bg-blue-500 lg:bg-blue-800 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
             <router-link
               :to="{ name: 'home' }"
-              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent decoration-white"
+              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-4 dark:border-transparent decoration-white"
               aria-current="page"
             >
-              <span class="">Home</span>
+              Home
             </router-link>
           </li>
           <li>
             <router-link
               :to="{ name: 'about-us' }"
-              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-4 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
               aria-current="page"
             >
               About Us
@@ -63,7 +63,7 @@ export default {};
           <li>
             <router-link
               :to="{ name: 'contacts' }"
-              class="nav-link active flex items-center px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+              class="nav-link active flex items-center justify-center text-lg text-white px-4 mb-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
               aria-current="page"
             >
               Contacts
