@@ -65,8 +65,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   aspect-ratio: 8 / 5;
-  --bg: hsl(330 10% calc(95% - (var(--hover) * 10%)));
-  --accent: #94a3b8;
+  --bg: hsl(330 10% calc(1% - (var(--hover) * 10%)));
+  --accent: #93c5fd;
   transition: background 0.2s;
   background: radial-gradient(
       circle at top left,
