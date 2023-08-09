@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="template">
-    <header class="header text-white bg-blue-900">
+    <header class="header text-white bg-blue-800">
       <AppHeader />
     </header>
 
@@ -20,7 +20,7 @@ export default {
       <router-view></router-view>
     </main>
 
-    <footer class="text-white bg-blue-800">
+    <footer class="text-white bg-blue-900">
       <AppFooter />
     </footer>
   </div>

@@ -34,7 +34,7 @@ export default {};
       </li>
     </ul>
   </div> -->
-  <nav class="bg-blue-900 dark:bg-gray-900">
+  <nav class="bg-blue-800 dark:bg-gray-900">
     <div
       class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
@@ -71,7 +71,7 @@ export default {};
       </button>
       <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 lg:p-0 mt-4 border text-black lg:text-white border-gray-100 rounded-lg bg-blue-300 lg:bg-blue-900 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col p-4 lg:p-0 mt-4 border text-black lg:text-white border-gray-100 rounded-lg bg-blue-300 lg:bg-blue-800 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700"
         >
           <li>
             <router-link
