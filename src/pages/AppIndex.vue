@@ -96,7 +96,7 @@ export default {
       <ul class="flex items-center -space-x-px h-10 text-base">
         <li>
           <button
-            class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-white bg-blue-600 border border-blue-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-white bg-blue-800 border border-blue-800 rounded-l-lg hover:bg-blue-500 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             @click="previousPage()"
           >
             <span class="sr-only">Previous</span>
@@ -119,10 +119,10 @@ export default {
         </li>
         <li v-for="page in nPages" :key="page">
           <button
-            class="flex items-center justify-center px-4 h-10 leading-tight text-white border border-blue-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="flex items-center justify-center px-4 h-10 leading-tight text-white border border-blue-800 hover:bg-blue-500 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             :class="{
               'bg-blue-500': page == currentPage,
-              'bg-blue-700': page !== currentPage,
+              'bg-blue-800': page !== currentPage,
             }"
             @click="changePage(page)"
           >
@@ -131,7 +131,7 @@ export default {
         </li>
         <li @click="nextPage()">
           <button
-            class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-blue-600 border border-blue-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            class="flex items-center justify-center px-4 h-10 leading-tight text-white bg-blue-800 border border-blue-800 rounded-r-lg hover:bg-blue-500 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <span class="sr-only">Next</span>
             <svg
@@ -155,6 +155,7 @@ export default {
     </nav>
   </div>
 </template>
+
 <style lang="scss" scoped>
 // loader
 @keyframes square-animation {
