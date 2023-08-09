@@ -64,7 +64,7 @@ export default {
       <!-- testo della card -->
       <div class="flex justify-between">
         <div
-          class="title text-3xl font-bold mb-3 hover:cursor-pointer hover:text-black inline-block text-slate-300"
+          class="title text-3xl font-bold mb-3 hover:cursor-pointer hover:text-slate-50 inline-block text-slate-300"
         >
           {{ dataCard.title }}
         </div>
@@ -82,13 +82,13 @@ export default {
       <div class="technologies py-2">
         <span
           v-for="technology in dataCard.technologies"
-          class="text-slate-300 hover:cursor-pointer hover:text-black mr-2"
+          class="text-slate-300 hover:cursor-pointer hover:text-slate-50 mr-2"
           >{{ technology.name }}</span
         >
       </div>
       <div class="types">
         <span
-          class="text-slate-300 hover:cursor-pointer hover:text-black mr-2"
+          class="text-slate-300 hover:cursor-pointer hover:text-slate-50 mr-2"
           >{{ dataCard.type.name }}</span
         >
       </div>
