@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div class="template">
+  <div class="template font-mono">
     <header class="header text-white bg-blue-800">
       <AppHeader />
     </header>
