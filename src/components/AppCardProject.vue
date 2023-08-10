@@ -63,11 +63,11 @@ export default {
     >
       <!-- testo della card -->
       <div class="flex justify-between">
-        <div
+        <router-link :to="{name:'show', params: {slug:dataCard.slug}}"
           class="title text-3xl font-bold mb-3 hover:cursor-pointer hover:text-slate-50 inline-block text-slate-300"
         >
           {{ dataCard.title }}
-        </div>
+        </router-link>
         <div class="author inline-block">
           <div
             class="bg-blue-700 text-white border border-blue-300 border-b-4 font-medium overflow-hidden relative px-4 py-1 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group inline-block"
@@ -82,6 +82,7 @@ export default {
       <div class="technologies py-2">
         <span
           v-for="technology in dataCard.technologies"
+          :key="technology.id"
           class="text-slate-300 hover:cursor-pointer hover:text-slate-50 mr-2"
           >{{ technology.name }}</span
         >
