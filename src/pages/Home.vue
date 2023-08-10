@@ -11,7 +11,9 @@ export default {
   },
   methods: {
     setUserId(index) {
-      store.setUserId(index);
+      sessionStorage.removeItem("userId");
+      sessionStorage.setItem("user_id", index);
+      // console.log(sessionStorage.getItem("user_id"));
     },
     getUsers() {
       this.loader = true;
@@ -28,11 +30,11 @@ export default {
 </script>
 
 <template>
+  <!-- loader  -->
   <div
     class="lg:container lg:mx-auto flex justify-center items-center h-screen"
     v-if="loader"
   >
-    <!-- <h1 class="text-center text-3xl font-bold text-white">CARICAMENTO</h1> -->
     <div class="loader">
       <div class="loader-square"></div>
       <div class="loader-square"></div>
@@ -43,6 +45,8 @@ export default {
       <div class="loader-square"></div>
     </div>
   </div>
+
+  <!-- pagina caricata  -->
   <div class="container mx-auto py-12" v-else>
     <h1 class="text-center text-3xl font-extrabold mb-10 text-white">
       Welcome in our Portfolios

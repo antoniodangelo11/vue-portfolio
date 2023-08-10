@@ -8,6 +8,8 @@ export default {
     return {
       store,
       // arrTypes: [],
+      userProjects: [],
+
       currentPage: 1,
       nPages: 0,
       loader: true,
@@ -30,6 +32,7 @@ export default {
       this.currentPage--;
     },
     getProjects() {
+      let userId = sessionStorage.getItem("user_id");
       this.loader = true;
       axios
         .get(store.baseUrl + "api/projects", {
@@ -37,11 +40,11 @@ export default {
             page: this.currentPage,
             // se sto già in prjects.index non esegue il craeated e non aggiorna la pagina
             // q: new URLSearchParams(window.location.search).get("q"),
-            user_id: this.store.userId,
+            user_id: userId,
           },
         })
         .then((response) => {
-          store.userProjects = response.data.results.data;
+          this.userProjects = response.data.results.data;
           this.nPages = response.data.results.last_page;
           this.loader = false;
         });
@@ -76,13 +79,13 @@ export default {
   </div>
   <div class="lg:container lg:mx-auto" v-else>
     <h1 class="text-3xl font-extrabold text-center py-3 text-white">
-      {{ store.userProjects[0].user.name }}'s Projects
+      {{ this.userProjects[0].user.name }}'s Projects
     </h1>
     <div
       class="grid grid-cols-1 lg:grid-cols-2 px-4 md:px-6 lg:px-4 gap-10 py-4"
     >
       <AppCardProject
-        v-for="project in store.userProjects"
+        v-for="project in userProjects"
         :key="project.id"
         :dataCard="project"
       />
