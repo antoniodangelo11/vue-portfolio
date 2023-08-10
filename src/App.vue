@@ -7,6 +7,9 @@ export default {
     AppHeader,
     AppFooter,
   },
+  mounted() {
+    initFlowbite();
+  },
 };
 </script>
 

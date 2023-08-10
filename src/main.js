@@ -8,8 +8,3 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import { router } from "./router";
 
 createApp(App).use(router).mount("#app");
-
-// initialize components based on data attribute selectors
-onMounted(() => {
-  initFlowbite();
-});
