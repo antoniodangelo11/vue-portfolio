@@ -1,8 +1,15 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
+import { initFlowbite } from "flowbite";
 
 export default {
+  data() {
+    return {};
+  },
+  created() {
+    initFlowbite();
+  },
   components: {
     AppHeader,
     AppFooter,
