@@ -18,7 +18,7 @@ export default {
     executeSearch() {
       this.store.search = this.searchStr;
       this.$router.push({
-        name: "projects.index",
+        name: "index",
         query: { q: this.searchStr },
       });
     },
@@ -62,6 +62,13 @@ export default {
           placeholder="Search a Project"
           v-model="searchStr"
         />
+        <!-- SUBMIT  -->
+        <button
+          type="submit"
+          class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+        >
+          Search
+        </button>
       </div>
 
       <!-- TECHNOLOGIES  -->
@@ -117,14 +124,6 @@ export default {
         </li>
       </ul>
     </div> -->
-
-      <!-- SUBMIT  -->
-      <button
-        type="submit"
-        class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-      >
-        Search
-      </button>
     </form>
     <!-- TYPES  -->
     <form>

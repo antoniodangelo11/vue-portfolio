@@ -41,10 +41,8 @@ export default {
         .get(store.baseUrl + "api/projects", {
           params: {
             page: this.currentPage,
-            // se sto già in prjects.index non esegue il craeated e non aggiorna la pagina
-            // q: new URLSearchParams(window.location.search).get("q"),
             user_id: userId,
-            q: this.searchStr,
+            q: this.store.search,
             type: this.typeId,
           },
         })
