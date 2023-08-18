@@ -2,13 +2,16 @@
 import axios from "axios";
 import AppCardProject from "../components/AppCardProject.vue";
 import { store } from "../store";
+import AppFilter from "../components/AppFilter.vue";
 
 export default {
   data() {
     return {
       store,
-      // arrTypes: [],
       userProjects: [],
+      arrTypes: [],
+      typeId: null,
+      searchStr: "",
 
       currentPage: 1,
       nPages: 0,
@@ -41,6 +44,8 @@ export default {
             // se sto già in prjects.index non esegue il craeated e non aggiorna la pagina
             // q: new URLSearchParams(window.location.search).get("q"),
             user_id: userId,
+            q: this.searchStr,
+            type: this.typeId,
           },
         })
         .then((response) => {
@@ -49,16 +54,27 @@ export default {
           this.loader = false;
         });
     },
+    getTypes() {
+      axios.get(this.store.baseUrl + "api/types").then((response) => {
+        this.arrTypes = response.data.results;
+      });
+    },
+    manageChangeType(typeId) {
+      this.typeId = typeId;
+      console.log(this.typeId);
+      this.getProjects();
+    },
   },
   created() {
     this.getProjects();
+    this.getTypes();
   },
   watch: {
     currentPage() {
       this.getProjects();
     },
   },
-  components: { AppCardProject },
+  components: { AppCardProject, AppFilter },
 };
 </script>
 <template>
@@ -78,6 +94,7 @@ export default {
     </div>
   </div>
   <div class="lg:container lg:mx-auto" v-else>
+    <AppFilter :typs="arrTypes" @changeType="manageChangeType($event)" />
     <h1 class="text-3xl font-extrabold text-center py-3 text-white">
       {{ this.userProjects[0].user.name }}'s Projects
     </h1>
