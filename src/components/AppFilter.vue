@@ -21,6 +21,9 @@ export default {
         name: "index",
         query: { q: this.searchStr },
       });
+      //   setTimeout(function () {
+      //     location.reload();
+      //   }, 1000);
     },
   },
   //   watch: {
@@ -34,7 +37,11 @@ export default {
 <template>
   <div class="grid grid-cols-3">
     <!-- SEARCHBAR  -->
-    <form class="" @submit.prevent="executeSearch">
+    <form
+      class=""
+      @submit.prevent="executeSearch"
+      @submit="$emit('changeType', typeId)"
+    >
       <div>
         <div
           class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
@@ -62,6 +69,18 @@ export default {
           placeholder="Search a Project"
           v-model="searchStr"
         />
+
+        <select
+          id="countries"
+          class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+          v-model="typeId"
+        >
+          <option :value="null" selected>Choose a type</option>
+          <option v-for="typ in typs" :value="typ.id">
+            {{ typ.name }}
+          </option>
+        </select>
+
         <!-- SUBMIT  -->
         <button
           type="submit"
@@ -70,63 +89,16 @@ export default {
           Search
         </button>
       </div>
-
-      <!-- TECHNOLOGIES  -->
-      <!-- <button
-      id="dropdownCheckboxButton"
-      data-dropdown-toggle="dropdownDefaultCheckbox"
-      class="text-white text-xs lg:text-sm bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center col-span-2"
-      type="button"
-    >
-      Technologies
-      <svg
-        class="w-2.5 h-2.5 ml-2.5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 10 6"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="m1 1 4 4 4-4"
-        />
-      </svg>
-    </button> -->
-      <!-- Dropdown menu -->
-      <!-- <div
-      id="dropdownDefaultCheckbox"
-      class="z-10 hidden w-48 bg-blue-800 divide-y divide-gray-100 rounded-lg shadow"
-    >
-      <ul
-        class="p-3 space-y-3 text-sm text-white"
-        aria-labelledby="dropdownCheckboxButton"
-      >
-        <li>
-          <div v-for="technology in technologies" class="flex items-center">
-            <input
-              :id="'checkbox-item-' + technology.id"
-              type="checkbox"
-              :value="technology.id"
-              :checked="technology.selected"
-              @change="technology.selected = !technology.selected"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded hover:cursor-pointer focus:ring-blue-500"
-            />
-
-            <label
-              :for="'checkbox-item-' + technology.id"
-              class="ml-2 text-sm font-medium text-white my-1"
-              >{{ technology.name }}</label
-            >
-          </div>
-        </li>
-      </ul>
-    </div> -->
     </form>
+    <router-link
+      class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+      :to="{ name: 'index' }"
+      aria-current="page"
+    >
+      refresh
+    </router-link>
     <!-- TYPES  -->
-    <form>
+    <!-- <form>
       <select
         id="countries"
         class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
@@ -138,7 +110,7 @@ export default {
           {{ typ.name }}
         </option>
       </select>
-    </form>
+    </form> -->
   </div>
 </template>
 

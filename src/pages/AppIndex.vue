@@ -16,6 +16,7 @@ export default {
       currentPage: 1,
       nPages: 0,
       loader: true,
+      noResults: false,
     };
   },
   methods: {
@@ -47,9 +48,16 @@ export default {
           },
         })
         .then((response) => {
-          this.userProjects = response.data.results.data;
+          const resultsData = response.data.results.data;
+          if (resultsData.length) {
+            this.userProjects = resultsData;
+            this.loader = false;
+          } else {
+            this.userProjects = [];
+            this.loader = false;
+            this.noResults = true;
+          }
           this.nPages = response.data.results.last_page;
-          this.loader = false;
         });
     },
     getTypes() {
@@ -90,6 +98,12 @@ export default {
       <div class="loader-square"></div>
       <div class="loader-square"></div>
     </div>
+  </div>
+  <div
+    v-if="noResults"
+    class="lg:container lg:mx-auto flex justify-center items-center h-screen text-white text-4xl"
+  >
+    NON CI SONO RISULTATI PER LA RICERCA
   </div>
   <div class="lg:container lg:mx-auto" v-else>
     <AppFilter :typs="arrTypes" @changeType="manageChangeType($event)" />
