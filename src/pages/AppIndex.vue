@@ -107,7 +107,10 @@ export default {
   </div>
   <div class="lg:container lg:mx-auto" v-else>
     <AppFilter :typs="arrTypes" @changeType="manageChangeType($event)" />
-    <h1 class="text-3xl font-extrabold text-center py-3 text-white">
+    <h1
+      v-if="!loader"
+      class="text-3xl font-extrabold text-center py-3 text-white"
+    >
       {{ this.userProjects[0].user.name }}'s Projects
     </h1>
     <div
