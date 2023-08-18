@@ -61,7 +61,7 @@ export default {
     },
     manageChangeType(typeId) {
       this.typeId = typeId;
-      console.log(this.typeId);
+      // console.log(this.typeId);
       this.getProjects();
     },
   },
