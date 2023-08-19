@@ -21,9 +21,6 @@ export default {
         name: "index",
         query: { q: this.searchStr },
       });
-      //   setTimeout(function () {
-      //     location.reload();
-      //   }, 1000);
     },
   },
   //   watch: {

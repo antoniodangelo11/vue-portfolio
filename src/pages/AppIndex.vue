@@ -70,6 +70,11 @@ export default {
       // console.log(this.typeId);
       this.getProjects();
     },
+    resetIndex() {
+      setTimeout(function () {
+        location.reload();
+      }, 200);
+    },
   },
   created() {
     this.getProjects();
@@ -101,9 +106,17 @@ export default {
   </div>
   <div
     v-if="noResults"
-    class="lg:container lg:mx-auto flex justify-center items-center h-screen text-white text-4xl"
+    class="lg:container lg:mx-auto flex justify-center items-center flex-col h-screen text-white text-4xl"
   >
-    NON CI SONO RISULTATI PER LA RICERCA
+    <div class="p-2">NON CI SONO RISULTATI PER LA RICERCA</div>
+    <router-link
+      class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-6 py-4 mt-3"
+      :to="{ name: 'index' }"
+      aria-current="page"
+      @click="resetIndex"
+    >
+      refresh
+    </router-link>
   </div>
   <div class="lg:container lg:mx-auto" v-else>
     <AppFilter :typs="arrTypes" @changeType="manageChangeType($event)" />
