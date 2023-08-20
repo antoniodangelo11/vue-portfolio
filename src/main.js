@@ -1,6 +1,4 @@
 import { createApp } from "vue";
-// import { onMounted } from "vue";
-// import { initFlowbite } from "flowbite";
 import "./style.css";
 import App from "./App.vue";
 import "@fortawesome/fontawesome-free/css/all.css";
