@@ -5,6 +5,7 @@ import About from "./pages/About.vue";
 import AppIndex from "./pages/AppIndex.vue";
 import Contacts from "./pages/Contacts.vue";
 import App404 from "./pages/App404.vue";
+import AppShow from "./pages/AppShow.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: "/contacts",
       name: "contacts",
       component: Contacts,
+    },
+    {
+      path: "/projects/:slug",
+      name: "show",
+      component: AppShow,
     },
     {
       path: "/:pathMatch(.*)*",
