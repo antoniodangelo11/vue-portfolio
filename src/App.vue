@@ -4,9 +4,6 @@ import AppFooter from "./components/AppFooter.vue";
 import { initFlowbite } from "flowbite";
 
 export default {
-  data() {
-    return {};
-  },
   created() {
     initFlowbite();
   },
